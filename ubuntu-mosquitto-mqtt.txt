@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Actualiza los repositorios
+sudo apt update
+
+# Instala el servidor Mosquitto y el cliente Mosquitto
+sudo apt install -y mosquitto mosquitto-clients
+
+# Abre el archivo de configuración de Mosquitto en un editor de texto y agrega las líneas requeridas
+sudo sed -i '$ a listener 1883 0.0.0.0' /etc/mosquitto/mosquitto.conf
+sudo sed -i '$ a allow_anonymous true' /etc/mosquitto/mosquitto.conf
+
+# Reinicia el servicio de Mosquitto para aplicar los cambios
+sudo systemctl restart mosquitto

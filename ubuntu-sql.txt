@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Actualiza la máquina
+sudo apt update
+
+# Instala MySQL
+sudo apt install -y mysql-server
+
+# Verifica el estado del servicio MySQL
+sudo systemctl status mysql
+
+# Inicia sesión en MySQL con el usuario root y la contraseña predeterminada: root
+sudo mysql -u root -p -e "CREATE USER 'nombre_usuario'@'%' IDENTIFIED BY 'contraseña';"
+
+# Navega a la carpeta de configuración de MySQL
+cd /etc/mysql/mysql.conf.d
+
+# Edita el archivo de configuración mysqld.cnf para permitir conexiones remotas
+sudo sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' mysqld.cnf
+
+# Reinicia el servidor MySQL para aplicar los cambios
+sudo systemctl restart mysql

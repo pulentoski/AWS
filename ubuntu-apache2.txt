@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Actualizar la lista de paquetes disponibles e instalar Apache2
+sudo apt update
+sudo apt install -y apache2
+
+# Habilitar Apache2 para que se inicie automáticamente con el sistema
+sudo systemctl enable apache2
+
+# Iniciar Apache2
+sudo systemctl start apache2
