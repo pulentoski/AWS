@@ -1,5 +1,1 @@
-***********************************************
-*                                             *
-*   SCRIPTS AUTOMATIZADOS PARA AWS SERVICES   *
-*                                             *
-***********************************************
+# <p align="center">SCRIPTS AUTOMATIZADOS PARA AWS SERVICES</p>
