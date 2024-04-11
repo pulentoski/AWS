@@ -1,0 +1,35 @@
+Guía para Instalar Apache en Ubuntu en AWS
+
+Paso 1: Conexión a la Instancia de AWS
+Conéctate a tu instancia de AWS a través de SSH. Utiliza el siguiente comando en tu terminal local, reemplazando <ruta_a_tu_llave_privada>.pem con la ruta a tu llave privada y <dirección_IP_de_tu_instancia> con la dirección IP de tu instancia:
+
+Paso 2: Actualización de Paquetes
+Actualiza la lista de paquetes del sistema operativo Ubuntu con el siguiente comando:
+sudo apt update
+
+Paso 3: Instalación de Apache
+Instala Apache ejecutando el siguiente comando:
+sudo apt install apache2
+
+Paso 4: Verificación de la Instalación
+Verifica que Apache se haya instalado correctamente con el siguiente comando:
+sudo systemctl status apache2
+Deberías ver un mensaje que indica que Apache se está ejecutando.
+
+Paso 5: Habilitación de Inicio Automático
+Habilita Apache para que se inicie automáticamente al arrancar el sistema con el siguiente comando:
+sudo systemctl enable apache2
+
+Paso 6: Ajuste de Permisos
+Ajusta los permisos de los archivos y directorios de Apache con los siguientes comandos:
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+
+Paso 7: Configuración del Firewall
+Permite el tráfico HTTP a través del firewall de Ubuntu con los siguientes comandos:
+sudo ufw allow 'Apache'
+sudo ufw enable
+
+Paso 8: Acceso al Servidor Web
+Ahora que Apache está instalado y configurado, puedes acceder al servidor web desde un navegador web ingresando la dirección IP pública de tu instancia de AWS en la barra de direcciones.
+
