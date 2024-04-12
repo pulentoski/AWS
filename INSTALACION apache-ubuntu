@@ -28,10 +28,6 @@ Ajusta los permisos de los archivos y directorios de Apache con los siguientes c
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 755 /var/www/html
 
-Paso 7: Configuración del Firewall
-Permite el tráfico HTTP a través del firewall de Ubuntu con los siguientes comandos:
-sudo ufw allow 'Apache'
-sudo ufw enable
 
 Paso 8: Acceso al Servidor Web
 Ahora que Apache está instalado y configurado, puedes acceder al servidor web desde un navegador web ingresando la dirección IP pública de tu instancia de AWS en la barra de direcciones.
