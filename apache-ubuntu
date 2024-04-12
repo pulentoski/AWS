@@ -16,6 +16,9 @@ Verifica que Apache se haya instalado correctamente con el siguiente comando:
 sudo systemctl status apache2
 Deberías ver un mensaje que indica que Apache se está ejecutando.
 
+Instala PHP y el módulo de Apache para PHP con el siguiente comando:
+sudo apt install php libapache2-mod-php
+
 Paso 5: Habilitación de Inicio Automático
 Habilita Apache para que se inicie automáticamente al arrancar el sistema con el siguiente comando:
 sudo systemctl enable apache2
@@ -32,4 +35,3 @@ sudo ufw enable
 
 Paso 8: Acceso al Servidor Web
 Ahora que Apache está instalado y configurado, puedes acceder al servidor web desde un navegador web ingresando la dirección IP pública de tu instancia de AWS en la barra de direcciones.
-
